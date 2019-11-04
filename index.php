@@ -1,9 +1,10 @@
 <?php
     ini_set("display_errors",1);
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $conn  = new PDO("pgsql:host=localhost;port=6551;dbname=postgres;user=postgres;");
+        $conn  = new PDO("pgsql:host=localhost;port=25432;dbname=postgres;user=docker;password=docker");
         $nome = isset($_POST['nome']) ? $_POST['nome'] : "";
         $senha = isset($_POST['senha']) ? $_POST['senha'] : "";
+        // $senha = preg_replace('/[^[:alpha:]_]/', '', isset($_POST['senha']) ? $_POST['senha'] : "");
 
         $query = "select nome, senha from usuarios where nome='$nome' and senha='$senha'";
         $result = $conn->prepare($query);
