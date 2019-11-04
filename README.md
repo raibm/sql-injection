@@ -12,4 +12,5 @@ Informações do container:
       user: docker
       password: docker
       database: postgres
-  
+
+É necessário criar uma tabela no banco chamada USUARIOS com duas colunas, SENHA E LOGIN 
